@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateMyProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <EditText
+            android:id="@+id/ETUpdateMyProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="8sp"
+            android:background="@drawable/etshape"
+            android:textColor="@color/black"
+            android:drawablePadding="16dp"
+            android:hint="Name"
+            android:inputType="text"
+            android:paddingLeft="16sp"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/ETUpdateMyProfileMobileNo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:layout_margin="8sp"
+            android:background="@drawable/etshape"
+            android:enabled="false"
+            android:drawablePadding="16dp"
+            android:hint="Mobile Number"
+            android:paddingLeft="16sp"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/ETUpdateMyProfileEmail"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="50dp"
+            android:layout_margin="8sp"
+            android:background="@drawable/etshape"
+            android:drawablePadding="16dp"
+            android:hint="Email ID"
+            android:paddingLeft="16sp"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/ETUpdateMyProfileUsername"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:layout_margin="8sp"
+            android:background="@drawable/etshape"
+            android:drawablePadding="16dp"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingLeft="16sp"
+            android:textColorHint="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUpdatemyprofilebtnUpdateProfilet"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12sp"
+            android:background="@drawable/btshape"
+            android:fontFamily="monospace"
+            android:text="Uodate Profile"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="30dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</ScrollView>

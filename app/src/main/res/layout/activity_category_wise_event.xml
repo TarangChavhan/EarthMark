@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CategoryWiseEventActivity">
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/svCategorywiseEventSearch"
+        app:queryHint="Search by Category,Company,Event,Address"
+        app:iconifiedByDefault="false"
+        android:layout_margin="16sp"
+        android:layout_marginTop="16dp"
+        android:padding="8sp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lvCategorywiseEventlist"
+        android:layout_margin="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCateWiseEventNoEventAvilable"
+        android:text="No Event Avilabe"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+</LinearLayout>

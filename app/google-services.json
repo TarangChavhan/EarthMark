@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "522023620790",
+    "project_id": "earthmark-f1ce1",
+    "storage_bucket": "earthmark-f1ce1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522023620790:android:0a00405079fb66f3929617",
+        "android_client_info": {
+          "package_name": "com.example.earthmark"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcT7LStzjFL1ZyvPrDZs1K6Qmv_wHDTcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

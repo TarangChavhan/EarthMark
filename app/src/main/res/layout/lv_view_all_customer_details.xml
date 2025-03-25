@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:id="@+id/ALLCuStomerProfilePhoto"
+            android:src="@drawable/noimg"
+            android:layout_gravity="center"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnALLCusomerDetalisDetelet"
+            android:text="Delete User"
+            android:background="@drawable/btshape"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="16sp"
+            android:id="@+id/TVALLCoustomerProfilename"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="16sp"
+            android:id="@+id/TVALLCoustomerProfileUserName"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="16sp"
+            android:id="@+id/TVALLCoustomerProfileEmail"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="16sp"
+            android:id="@+id/TVALLCoustomerProfileAddress"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone No"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:layout_marginTop="16sp"
+            android:id="@+id/TVALLCoustomerProfilePhoneNo"/>
+    </LinearLayout>
+
+</ScrollView>
