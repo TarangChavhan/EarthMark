@@ -12,8 +12,11 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.earthmark.AdapterCategoryWiseEvent;
 import com.example.earthmark.AdapterGetAllCategoryDetails;
+import com.example.earthmark.CategoryWiseEventActivity;
 import com.example.earthmark.Common.Urls;
+import com.example.earthmark.POJOCategoryWiseEvent;
 import com.example.earthmark.POJOGetAllCategoryDetails;
 import com.example.earthmark.R;
 import com.loopj.android.http.AsyncHttpClient;
@@ -34,7 +37,11 @@ public class HomeFragment extends Fragment {
     TextView tvNoCategoryAvilable;
     List<POJOGetAllCategoryDetails> pojoGetAllCategoryDetails;
     AdapterGetAllCategoryDetails adapterGetAllCategoryDetails;
+    List<POJOCategoryWiseEvent> pojoCategoryWiseEventList;
     SearchView searchCategory;
+    AdapterCategoryWiseEvent adapterCategoryWiseEvent;
+    ListView listViewShowLand;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +49,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         pojoGetAllCategoryDetails = new ArrayList<>();
+        pojoCategoryWiseEventList = new ArrayList<>();
+        listViewShowLand = view.findViewById(R.id.ShowLands);
         lvShowAllCategory=view.findViewById(R.id.lvFragmentHomeListview);
         tvNoCategoryAvilable=view.findViewById(R.id.tvFragmentHomeNoCategoryAvliable);
         searchCategory=view.findViewById(R.id.svHomeFragmentSerchCategory);
@@ -61,8 +70,60 @@ public class HomeFragment extends Fragment {
         });
 
         getAllCategory();
+        getAllLands();
 
         return view;
+    }
+
+    private void getAllLands() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+
+        client.post(Urls.ShowAllLands,
+                params,
+                new JsonHttpResponseHandler()
+                {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        super.onSuccess(statusCode, headers, response);
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("ShowAllLands");
+                            if (jsonArray==null)
+                            {
+                                listViewShowLand.setVisibility(View.GONE);
+                                tvNoCategoryAvilable.setText(View.VISIBLE);
+                            }
+                            for (int i=0;i<jsonArray.length();i++)
+                            {
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                String strid= jsonObject.getString("id");
+                                String strcategoryname= jsonObject.getString("categoryname");
+                                String strcompanyname= jsonObject.getString("companyname");
+                                String streventImage= jsonObject.getString("eventimage");
+                                String strbudget= jsonObject.getString("budget");
+                                String streventRating= jsonObject.getString("evenrating");
+                                String streventOffer= jsonObject.getString("eventoffer");
+                                String streventDescription= jsonObject.getString("eventdescription");
+                                String strcompanyAddress= jsonObject.getString("companyaddress");
+                                String strMobileNo=jsonObject.getString("mobile_no");
+
+                                pojoCategoryWiseEventList.add(new POJOCategoryWiseEvent(strid,strcategoryname,strcompanyname,streventImage,strbudget,streventRating,streventOffer,streventDescription,strcompanyAddress,strMobileNo));
+
+                            }
+                            adapterCategoryWiseEvent = new AdapterCategoryWiseEvent(pojoCategoryWiseEventList, getActivity());
+                            listViewShowLand.setAdapter(adapterCategoryWiseEvent);
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                        super.onFailure(statusCode, headers, throwable, errorResponse);
+                        Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
     }
 
     private void searchCategory(String query) {
